@@ -1,4 +1,4 @@
-# Basic Internet Monitoring Application for Wi-FI based Linux Systems
+# Basic Internet Monitoring Service for Wi-FI based Linux Systems
 
 A project for an Internet connectivity monitoring system, based on the Wi-Fi network interface.
 
@@ -16,6 +16,17 @@ To run the system, simply give permission to the execution script 'execute.sh' a
 $ chmod +x execute.sh
 $ sudo ./execute.sh
 '''
+
+## Integrating using Systemd
+If you want to run the project as a service through the systemd, the '''systemd_service_setup''' script will encapsulate the project in a service named **internet_monitor.service", that can be integrated with the init system or not. To build and activate the service, run:
+
+'''
+$ chmod +x systemd_service_setup.sh
+./systemd_service_setup.sh
+'''
+The project will be running in the current directory. 
+If active, the process will be running under your user, stopping only if finds a bug exception. To change this configuration, you can look into the setup script.
+
 ### Adapting the project
 
 Important definitions for the system's operation are found in the header file 'include/Internet_Monitor.h'. If necessary, adapt them to your project.
