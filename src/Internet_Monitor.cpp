@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include <iomanip>
+#include <ctime>
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
@@ -290,7 +292,7 @@ void Internet_Monitor::pingServer(size_t server_id) {
 
     std::string ip = servers[server_id].ip;
 
-    std::string command = "ping -c 4 " + ip + " 2>&1";
+    std::string command = "ping -c 2 " + ip + " 2>&1";
     std::array<char, 128> buffer{};
     std::string result;
 
@@ -322,7 +324,6 @@ void Internet_Monitor::pingServer(size_t server_id) {
     size_t pos = result.find("ping statistics ---\n");
 
 
-
     if (pos != std::string::npos) {
         pos += 20;
         std::string pingStats = result.substr(pos);
@@ -344,8 +345,10 @@ void Internet_Monitor::pingServer(size_t server_id) {
     }
 
     // -> [LAT_STATS]
-    // -> round-trip min/avg/max/stddev = 12.049/17.427/20.588/3.218 ms
-    pos = result.find("min/avg/max/stddev");
+    // -> round-trip min/avg/max/stddev = 12.049/17.427/20.588/3.218 ms (mac)
+    // -> rtt min/avg/max/mdev = 30.173/30.742/31.052/0.346 ms (linux - ubuntu 20.04)
+
+    pos = result.find("min/avg/max/mdev");
 
     if (pos != std::string::npos) {
         std::string latencyStats = result.substr(pos);
@@ -375,7 +378,9 @@ void Internet_Monitor::pingServer(size_t server_id) {
     } else {
 
         DEBUG_PRINT("Failed to get the ping return from the forked process pipe [LAT_STATS]");
-
+        std::stringstream msg;
+        msg << "\t\tpos after result.find: " << pos;
+        DEBUG_PRINT(msg.str());
         conn_flag = false;
     }
 
@@ -404,11 +409,13 @@ void Internet_Monitor::checkSignalStrength() {
     bool conn_flag = true;
     double link_static_quality = -1, link_current_quality = -1, signal_level = -1.0;
 
-    std::string command = "iwconfig wlan0 | grep 'Link Quality'";
+    std::stringstream command;
+    
+    command << "iwconfig " << wifi_dev << " | grep 'Link Quality'";
 
     DEBUG_PRINT("FORKING TO EXECUTE iwconfig");
 
-    FILE* pipe = popen(command.c_str(), "r");
+    FILE* pipe = popen(command.str().c_str() , "r");
     if (!pipe) {
         throw std::runtime_error("Pipe from forked process was fail to open\n");
     }
@@ -436,9 +443,6 @@ void Internet_Monitor::checkSignalStrength() {
         char tmp_char; // for extracting the delimiter in the returned msg;
 
         if (!(iss >> link_current_quality >> tmp_char  >> link_static_quality)) {
-            link_current_quality = 0.0;
-            link_static_quality = 0.0;
-
             throw std::runtime_error("Failed to parse Link Quality after finding the ""Link Quality=""\n");
         }
 
@@ -463,7 +467,6 @@ void Internet_Monitor::checkSignalStrength() {
         std::istringstream iss(signalStr);
 
         if (!(iss >> signal_level)) {
-            signal_level = 0.0;
             throw std::runtime_error("Failed to parse Signal Level after finding the ""Signal level=""\n");
         }
     }else{
@@ -482,7 +485,7 @@ void Internet_Monitor::checkSignalStrength() {
     for(int i = 0;  i < log_files.size(); i++) log_write(1, -1, msg.str(), true, false);
 
     if(!conn_flag){
-        throw Connection_Exception("Fail in receiving the iwconfig return\n", true, -1);
+        throw Connection_Exception("Fail in receisving the iwconfig return\n", true, -1);
     }
 }
 

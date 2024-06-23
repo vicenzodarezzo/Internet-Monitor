@@ -33,6 +33,7 @@ private:
     std::ofstream * report_log_file;
     std::vector<std::string> log_files_names;
     std::vector<int> servers_fails;
+    std::string wifi_dev = "wlan0";
     int signal_fails = 0;
 
 public:
@@ -98,8 +99,10 @@ public:
 
 /**
  * @brief Checks and logs the signal strength and link quality of the WLAN interface.
+ * 
+ * - Uses the defined device in the class declaration (wif_dev) as the wi-fi network interface card ;
  *
- * Executes the 'iwconfig wlan0 | grep 'Link Quality'' and 'iwconfig wlan0 | grep 'Signal level''
+ * Executes the 'iwconfig wlan0 | grep 'Link Quality'' and 'iwconfig {WIFI_DEV} | grep 'Signal level''
  * commands to retrieve current link quality and signal level information from the WLAN interface.
  * Parses the output to extract relative and absolute link quality values, as well as signal level,
  * and logs these values into the associated log files using the `log_write` function.
