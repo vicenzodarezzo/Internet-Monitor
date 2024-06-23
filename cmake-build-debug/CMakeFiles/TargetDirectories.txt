@@ -1,0 +1,3 @@
+/Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/cmake-build-debug/CMakeFiles/wifi_monitor.dir
+/Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
