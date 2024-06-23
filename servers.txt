@@ -1,1 +1,2 @@
 www.google.com,8.8.8.8,https://www.google.com/,-1
+www.cloudflare.com,1.1.1.1,https:www.cloudflare.com, -1

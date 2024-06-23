@@ -597,13 +597,13 @@ void Internet_Monitor::monitor() {
         }
 
         try{ checkSignalStrength(); }
-        catch(const std::runtime_error & e){
+        catch(Connection_Exception & e){
+            DEBUG_PRINT("CONNECTION EXCEPT CAPTURED IN SIGNAL TESTING" << e.what());
+            con_exception_treat(e);
+        }catch(const std::exception & e){
 
             DEBUG_PRINT("EXCEPT CAPTURED IN SIGNAL TESTING" << e.what());
 
-        }catch(Connection_Exception & e){
-            DEBUG_PRINT("CONNECTION EXCEPT CAPTURED IN SIGNAL TESTING" << e.what());
-            con_exception_treat(e);
         }
 
         size_t server_id = 0;
@@ -624,12 +624,12 @@ void Internet_Monitor::monitor() {
             try{
                 pingServer(server_id);
             }
-            catch( const std::runtime_error & e){
-                DEBUG_PRINT("EXCEPT CAPTURED IN SERVER LOOP" << e.what());
-
-            }catch(Connection_Exception & e){
+            catch(Connection_Exception & e){
                 DEBUG_PRINT("CONNECTION EXCEPT CAPTURED IN SIGNAL TESTING" << e.what());
                 rem_server_flag = con_exception_treat(e);
+            }catch( const std::exception & e){
+                DEBUG_PRINT("EXCEPT CAPTURED IN SERVER LOOP" << e.what());
+
             }
 
             if(rem_server_flag) continue;
@@ -640,6 +640,10 @@ void Internet_Monitor::monitor() {
                 }catch(Connection_Exception & e){
                     DEBUG_PRINT("CONNECTION EXCEPT CAPTURED IN DNS SOLVING" << e.what());
                     rem_server_flag = con_exception_treat(e);
+
+                }catch( const std::runtime_error & e){
+                    DEBUG_PRINT("EXCEPT CAPTURED IN DNS & TCP CHECKING" << e.what());
+
                 }
             }
 
