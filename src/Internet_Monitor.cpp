@@ -45,7 +45,7 @@ Internet_Monitor::Internet_Monitor(const std::string& filename) {
         if (!logfile->is_open()) {
             throw std::runtime_error("Failed to open log file\n");
         } else {
-            *logfile << "timestamp,op,pckg_s,pckg_r,pckg_l,conn,min_lat,avg_lat,max_lat,stddev_lat,DNS_flag,TCP_flag";
+            *logfile << "timestamp,op,pckg_s,pckg_r,pckg_l,conn,min_lat,avg_lat,max_lat,stddev_lat,DNS_flag,TCP_flag\n";
             log_files.push_back(logfile);
             log_files_names.push_back(log_file_name);
             servers_fails.push_back(0);
@@ -58,7 +58,7 @@ Internet_Monitor::Internet_Monitor(const std::string& filename) {
     if(!signal_log_file->is_open() || !report_log_file->is_open()){
         throw std::runtime_error("Failed to open log file\n");
     }else{
-        *signal_log_file << "timestamp, op, link_current_quality, link_static_quality, signal_strength";
+        *signal_log_file << "timestamp, op, link_current_quality, link_static_quality, signal_strength\n";
     }
 }
 
@@ -161,7 +161,7 @@ void Internet_Monitor::log_clear() {
                 std::cerr << "Error in cleaning " << log_files_names[log_id] << std::endl;
                 throw std::runtime_error("Error re-opening files\n");
             }else{
-                *file_ptr << "timestamp,op,pckg_s,pckg_r,pckg_l,conn,min_lat,avg_lat,max_lat,stddev_lat,DNS_flag,TCP_flag";
+                *file_ptr << "timestamp,op,pckg_s,pckg_r,pckg_l,conn,min_lat,avg_lat,max_lat,stddev_lat,DNS_flag,TCP_flag\n";
             }
 
         } else {
@@ -180,7 +180,7 @@ void Internet_Monitor::log_clear() {
             std::cerr << "Error in cleaning " << "../logs/signal_stats.log" << std::endl;
             throw std::runtime_error("Error re-opening files\n");
         }else{
-            *signal_log_file << "timestamp, op, link_current_quality, link_static_quality, signal_strength";
+            *signal_log_file << "timestamp, op, link_current_quality, link_static_quality, signal_strength\n";
         }
     }else{
         std::cerr << "File in not opened :" << "../logs/signal_stats.log" << std::endl;
