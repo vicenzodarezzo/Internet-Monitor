@@ -109,12 +109,17 @@ void Internet_Monitor::log_write(int operation_id, size_t server_pos,
                      const std::string& msg, bool signal_flag, bool report_flag){
 
     auto now = std::chrono::system_clock::now();
+    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+
     std::time_t current_time = std::chrono::system_clock::to_time_t(now);
     std::tm tm_time = *std::localtime(&current_time);
 
-
     std::stringstream timestamp;
     timestamp << std::put_time(&tm_time, "%Y-%m-%d %H:%M:%S");
+    timestamp << '.' << std::setfill('0') << std::setw(3) << ms.count();  // Append milliseconds
+
+    std::cout << "Timestamp with milliseconds: " << timestamp.str() << std::endl;
+
 
 
     int id  = static_cast<int>(server_pos);
