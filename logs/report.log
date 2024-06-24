@@ -1,19 +1,20 @@
-2024-06-24 01:52:57,[CLEAN] exceptions counters cleaned
-2024-06-24 01:53:14,[CLEAN] exceptions counters cleaned
-2024-06-24 01:53:14,[IWCONFIG FAIL]
+2024-06-24 02:49:45.687,[CLEAN] exceptions counters cleaned
+2024-06-24 02:50:02.155,[CLEAN] exceptions counters cleaned
+2024-06-24 02:50:18.637,[CLEAN] exceptions counters cleaned
+2024-06-24 02:50:27.924,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:14,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:17,[PING FAIL] Server www.google.com
+2024-06-24 02:50:27.924,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:30.977,[PING FAIL] Server www.google.com
 		[PING OUTPUT] PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 From 192.168.0.6 icmp_seq=1 Destination Host Unreachable
 From 192.168.0.6 icmp_seq=2 Destination Host Unreachable
 
 --- 8.8.8.8 ping statistics ---
-2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1003ms
+2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1001ms
 pipe 2
 
-2024-06-24 01:53:17,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:20,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:30.977,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:34.049,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 From 192.168.0.6 icmp_seq=1 Destination Host Unreachable
 From 192.168.0.6 icmp_seq=2 Destination Host Unreachable
@@ -22,11 +23,12 @@ From 192.168.0.6 icmp_seq=2 Destination Host Unreachable
 2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1020ms
 pipe 2
 
-2024-06-24 01:53:20,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:20,[IWCONFIG FAIL]
+2024-06-24 02:50:34.049,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:34.049,[CLEAN] exceptions counters cleaned
+2024-06-24 02:50:34.052,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:20,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:23,[PING FAIL] Server www.google.com
+2024-06-24 02:50:34.052,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:37.121,[PING FAIL] Server www.google.com
 		[PING OUTPUT] PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 From 192.168.0.6 icmp_seq=1 Destination Host Unreachable
 From 192.168.0.6 icmp_seq=2 Destination Host Unreachable
@@ -35,8 +37,8 @@ From 192.168.0.6 icmp_seq=2 Destination Host Unreachable
 2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1017ms
 pipe 2
 
-2024-06-24 01:53:23,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:26,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:37.121,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:40.193,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 From 192.168.0.6 icmp_seq=1 Destination Host Unreachable
 From 192.168.0.6 icmp_seq=2 Destination Host Unreachable
@@ -45,76 +47,76 @@ From 192.168.0.6 icmp_seq=2 Destination Host Unreachable
 2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1020ms
 pipe 2
 
-2024-06-24 01:53:26,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:26,[IWCONFIG FAIL]
+2024-06-24 02:50:40.193,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:40.196,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:26,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:38,[PING FAIL] Server www.google.com
+2024-06-24 02:50:40.196,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:51.217,[PING FAIL] Server www.google.com
 		[PING OUTPUT] PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 
 --- 8.8.8.8 ping statistics ---
-2 packets transmitted, 0 received, 100% packet loss, time 1016ms
+2 packets transmitted, 0 received, 100% packet loss, time 1017ms
 
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:38,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:51.217,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:51.220,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:38,[CLEAN] exceptions counters cleaned
-2024-06-24 01:53:38,[IWCONFIG FAIL]
+2024-06-24 02:50:51.220,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:51.220,[CLEAN] exceptions counters cleaned
+2024-06-24 02:50:51.223,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:38,[PING FAIL] Server www.google.com
+2024-06-24 02:50:51.224,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:51.226,[PING FAIL] Server www.google.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:38,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:51.226,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:51.228,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:38,[IWCONFIG FAIL]
+2024-06-24 02:50:51.228,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:51.231,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:38,[PING FAIL] Server www.google.com
+2024-06-24 02:50:51.231,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:51.233,[PING FAIL] Server www.google.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:38,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:51.233,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:51.235,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:38,[IWCONFIG FAIL]
+2024-06-24 02:50:51.235,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:51.237,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:38,[PING FAIL] Server www.google.com
+2024-06-24 02:50:51.238,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:51.239,[PING FAIL] Server www.google.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:38,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:51.240,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:51.242,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:38,[IWCONFIG FAIL]
+2024-06-24 02:50:51.242,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:51.244,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:38,[PING FAIL] Server www.google.com
+2024-06-24 02:50:51.244,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:51.246,[PING FAIL] Server www.google.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:38,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:51.246,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:51.248,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:38,[IWCONFIG FAIL]
+2024-06-24 02:50:51.248,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:51.251,[IWCONFIG FAIL]
 		[IWCONFIG OUTPUT] 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Signal Fail
-2024-06-24 01:53:38,[PING FAIL] Server www.google.com
+2024-06-24 02:50:51.251,[CONNECTION EXCEPTION] Signal Fail
+2024-06-24 02:50:51.252,[PING FAIL] Server www.google.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.google.com
-2024-06-24 01:53:38,[PING FAIL] Server www.cloudflare.com
+2024-06-24 02:50:51.252,[CONNECTION EXCEPTION] Server Fail: www.google.com
+2024-06-24 02:50:51.254,[PING FAIL] Server www.cloudflare.com
 		[PING OUTPUT] ping: connect: Network is unreachable
 
-2024-06-24 01:53:38,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
-2024-06-24 01:53:38,[FATAL] Too much connection exceptions without losing signal - low connectivity
+2024-06-24 02:50:51.255,[CONNECTION EXCEPTION] Server Fail: www.cloudflare.com
+2024-06-24 02:50:51.255,[FATAL] Too much connection exceptions without losing signal - low connectivity
