@@ -51,28 +51,28 @@ build cmake_object_order_depends_target_wifi_monitor: phony || CMakeFiles/wifi_m
 
 build CMakeFiles/wifi_monitor.dir/src/main.cpp.o: CXX_COMPILER__wifi_monitor_unscanned_Debug /Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/src/main.cpp || cmake_object_order_depends_target_wifi_monitor
   DEP_FILE = CMakeFiles/wifi_monitor.dir/src/main.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/include
   OBJECT_DIR = CMakeFiles/wifi_monitor.dir
   OBJECT_FILE_DIR = CMakeFiles/wifi_monitor.dir/src
 
 build CMakeFiles/wifi_monitor.dir/src/Internet_Monitor.cpp.o: CXX_COMPILER__wifi_monitor_unscanned_Debug /Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/src/Internet_Monitor.cpp || cmake_object_order_depends_target_wifi_monitor
   DEP_FILE = CMakeFiles/wifi_monitor.dir/src/Internet_Monitor.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/include
   OBJECT_DIR = CMakeFiles/wifi_monitor.dir
   OBJECT_FILE_DIR = CMakeFiles/wifi_monitor.dir/src
 
 build CMakeFiles/wifi_monitor.dir/src/Server_Info.cpp.o: CXX_COMPILER__wifi_monitor_unscanned_Debug /Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/src/Server_Info.cpp || cmake_object_order_depends_target_wifi_monitor
   DEP_FILE = CMakeFiles/wifi_monitor.dir/src/Server_Info.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/include
   OBJECT_DIR = CMakeFiles/wifi_monitor.dir
   OBJECT_FILE_DIR = CMakeFiles/wifi_monitor.dir/src
 
 build CMakeFiles/wifi_monitor.dir/src/Connection_Exception.cpp.o: CXX_COMPILER__wifi_monitor_unscanned_Debug /Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/src/Connection_Exception.cpp || cmake_object_order_depends_target_wifi_monitor
   DEP_FILE = CMakeFiles/wifi_monitor.dir/src/Connection_Exception.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/vicenzodarezzo/Documents/C_lion_projects/wifi_monitor/include
   OBJECT_DIR = CMakeFiles/wifi_monitor.dir
   OBJECT_FILE_DIR = CMakeFiles/wifi_monitor.dir/src

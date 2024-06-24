@@ -45,6 +45,7 @@ Internet_Monitor::Internet_Monitor(const std::string& filename) {
         if (!logfile->is_open()) {
             throw std::runtime_error("Failed to open log file\n");
         } else {
+            *logfile << "timestamp,op,pckg_s,pckg_r,pckg_l,conn,min_lat,avg_lat,max_lat,stddev_lat,DNS_flag,TCP_flag";
             log_files.push_back(logfile);
             log_files_names.push_back(log_file_name);
             servers_fails.push_back(0);
@@ -56,6 +57,8 @@ Internet_Monitor::Internet_Monitor(const std::string& filename) {
 
     if(!signal_log_file->is_open() || !report_log_file->is_open()){
         throw std::runtime_error("Failed to open log file\n");
+    }else{
+        *signal_log_file << "timestamp, op, link_current_quality, link_static_quality, signal_strength";
     }
 }
 
@@ -157,6 +160,8 @@ void Internet_Monitor::log_clear() {
             if (!file_ptr->is_open()) {
                 std::cerr << "Error in cleaning " << log_files_names[log_id] << std::endl;
                 throw std::runtime_error("Error re-opening files\n");
+            }else{
+                *file_ptr << "timestamp,op,pckg_s,pckg_r,pckg_l,conn,min_lat,avg_lat,max_lat,stddev_lat,DNS_flag,TCP_flag";
             }
 
         } else {
@@ -167,16 +172,32 @@ void Internet_Monitor::log_clear() {
         log_id++;
     }
 
-    if( signal_log_file && signal_log_file->is_open()){
+    if(signal_log_file && signal_log_file->is_open()){
         signal_log_file->close();
         signal_log_file->open("../logs/signal_stats.log", std::ofstream::out | std::ofstream::trunc);
 
         if(!signal_log_file->is_open()){
             std::cerr << "Error in cleaning " << "../logs/signal_stats.log" << std::endl;
             throw std::runtime_error("Error re-opening files\n");
+        }else{
+            *signal_log_file << "timestamp, op, link_current_quality, link_static_quality, signal_strength";
         }
     }else{
         std::cerr << "File in not opened :" << "../logs/signal_stats.log" << std::endl;
+        throw std::runtime_error("Error re-opening files\n");
+    }
+
+    if(report_log_file && report_log_file->is_open()){
+        report_log_file->close();
+        report_log_file->open("../logs/report.log", std::ofstream::out | std::ofstream::trunc);
+
+        if(!report_log_file->is_open()){
+            std::cerr << "Error in cleaning " << "../logs/report.log" << std::endl;
+            throw std::runtime_error("Error re-opening files\n");
+        }
+
+    }else{
+        std::cerr << "File in not opened :" << "../logs/report.log" << std::endl;
         throw std::runtime_error("Error re-opening files\n");
     }
 }
@@ -387,14 +408,15 @@ void Internet_Monitor::pingServer(size_t server_id) {
     std::stringstream msg;
 
     msg << packages_trans << "," << packages_rec << "," << packages_loss << "," << connectivity << ","
-        << min_latency << "," << avg_latency << "," << max_latency << "," << mdev_latency;
+        << min_latency << "," << avg_latency << "," << max_latency << "," << mdev_latency
+        << "," << -2 << "," << -2;
 
     log_write(0, server_id, msg.str(), false, false);
 
     if(!conn_flag){
-        std::stringstream msg;
-        msg << "[PING FAIL] Server " << servers[server_id].name << "\n\t\t[PING OUTPUT] " << result;
-        log_write(0, -1, msg.str(), false, true);
+        std::stringstream msg_1;
+        msg_1 << "[PING FAIL] Server " << servers[server_id].name << "\n\t\t[PING OUTPUT] " << result;
+        log_write(0, -1, msg_1.str(), false, true);
         throw Connection_Exception("Fail in receiving the Ping return\n", false, server_id);
     }
 }
@@ -555,7 +577,9 @@ void Internet_Monitor::check_DNS_and_PORT(size_t server_id) {
     }
 
     std::stringstream msg;
-    msg << x << y;
+
+    msg  << -2 << "," << -2 << "," << -2 << "," << -2 << "," << -2 << "," << -2 << ","
+        << -2 << "," << -2 << "," << x << "," <<  y;
     log_write(2, server_id, msg.str(), false, false);
 
     if(!conn_flag){

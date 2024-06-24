@@ -9,9 +9,9 @@
 #include "Server_Info.h"
 #include "../include/Connection_Exception.h"
 
-#define CLEAN_PERIOD_IN_SECS 20
+#define CLEAN_PERIOD_IN_SECS 240
 #define CLEAN_EX_CON_COUNTER_IN_SECS 15
-#define SIGNAL_FAIL_THRESHOLD 3
+#define SIGNAL_FAIL_THRESHOLD 5
 #define SERVER_FAIL_THRESHOLD 10
 
 
