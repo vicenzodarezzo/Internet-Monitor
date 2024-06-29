@@ -3,7 +3,8 @@
 A project for an Internet connectivity monitoring system, based on the Wi-Fi network interface.
 
 For monitoring, it uses the Ping command to check reachability to servers via ICMP packets; the iwconfig command to verify signal and link quality; and DNS resolution attempts and TCP connections to verify server availability.
-Collected Data
+
+## Collected Data
 
 The collected data can be found in the ```logs``` folder created by the process, where files about each of the monitored servers are located, a file describing signal quality, and a generated report file where problems and their handling flow are described in a textual manner.
 Running the system:
